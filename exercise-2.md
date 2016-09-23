@@ -5,27 +5,32 @@ You can see the live version of this content here:
 https://docs.fedoraproject.org/en-US/Fedora/21/html/System_Administrators_Guide/ch-yum.html#sec-Updating_Packages
 
 
-Updating Packages
+# Updating Packages
 You can choose to update a single package, multiple packages, or all packages at once. If any dependencies of the package (or packages) you update have updates available themselves, then they are updated too.
-Updating a Single Package
+
+## Updating a Single Package
+
+
 To update a single package, run the following command as root:
 
-yum update package_name
+```
+    yum update *package_name*
 
-For example, to update the udev package, type:
+For example, to update the _udev_ package, type:
 
-~]# yum update udev
-Loaded plugins: langpacks, presto, refresh-packagekit
-Updating Red Hat repositories.
-INFO:rhsm-app.repolib:repos updated: 0
-Setting up Update Process
-Resolving Dependencies
---> Running transaction check
----> Package gdb.x86_64 0:7.2.90.20110411-34.fc15 will be updated
----> Package gdb.x86_64 0:7.2.90.20110429-36.fc15 will be an update
---> Finished Dependency Resolution
 
-Dependencies Resolved
+    ~]# yum update udev
+    Loaded plugins: langpacks, presto, refresh-packagekit
+    Updating Red Hat repositories.
+    INFO:rhsm-app.repolib:repos updated: 0
+    Setting up Update Process
+    Resolving Dependencies
+    --> Running transaction check
+    ---> Package gdb.x86_64 0:7.2.90.20110411-34.fc15 will be updated
+    ---> Package gdb.x86_64 0:7.2.90.20110429-36.fc15 will be an update
+    --> Finished Dependency Resolution
+
+    Dependencies Resolved
 
 ================================================================================
  Package     Arch         Version                          Repository      Size
@@ -39,3 +44,4 @@ Upgrade       1 Package(s)
 
 Total download size: 1.9 M
 Is this ok [y/N]:
+```
